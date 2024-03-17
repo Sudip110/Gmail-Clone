@@ -1,0 +1,45 @@
+.ListSection__container
+{
+    display: flex;
+    padding-left: 0.5em;
+    /* font-size: small; */
+}
+
+
+.ListSection__container > span
+{
+    width: 0.5em;
+}
+.ListSection
+{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 2px;
+    width: 15em;
+}
+.ListSection > .MuiSvgIcon-root
+{
+    font-size: 1.25em;
+}
+.ListSection__active
+{
+    border-bottom: 4px solid #0b57d0;
+}
+.ListSection__active,
+.ListSection__active > p,
+.ListSection__active > .MuiSvgIcon-root
+{
+    color: #0b57d0 !important;
+}
+.ListSection__container:hover
+{
+    background-color: whitesmoke;
+}
+
+.ListSection > p,.ListSection > .MuiSvgIcon-root
+{
+    margin: 10px;
+    color: gray ;
+}

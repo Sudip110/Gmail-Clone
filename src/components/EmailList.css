@@ -1,0 +1,68 @@
+.emailList
+{
+    flex: 0.9;
+    margin-left: 3em;
+    margin-right: 1em;
+}
+.emailList__settings
+{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between !important
+
+}
+
+.emailList__settings__left > .MuiButtonBase-root > .MuiSvgIcon-root,
+.emailList__settings__right > .MuiButtonBase-root >  .MuiSvgIcon-root,
+.settings__right__range
+{
+    font-size: 0.8em;
+}
+.emailList__settings__left,
+.emailList__settings__right
+{
+    display: flex;
+    align-items: center;
+     margin-top: 15px !important;
+    margin-left: 0.6em !important ; 
+}
+
+.settings__left__option, .MuiSvgIcon-root, .settings__right__range, .emailList__settings__right > p
+{
+    color: grey !important;
+}
+
+.settings__dropdown
+{
+    width: 0.5em;
+    border-radius: 5px !important;
+}
+.settings__checkbox
+{
+    border-radius: 5px !important;
+}
+.settings__right__range
+{
+    display: block;
+    cursor: pointer;
+    margin-block-start: 1em;
+    margin-right: 1em;
+    margin-block-end: 1em;
+    padding: 2px;
+    text-overflow:ellipsis ;
+    border-radius: 2px;
+}
+
+.settings__right__range:hover
+{
+    background-color: whitesmoke;
+}
+
+.EmailList__section
+{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-bottom: 2px solid whitesmoke;
+}

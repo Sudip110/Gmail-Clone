@@ -1,0 +1,85 @@
+.EmailRow
+{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.setting__start__drag
+{
+    width: 0.5em;
+    display:flex;
+    visibility: hidden;
+    align-items: center;
+}
+
+.row__setting__start > .MuiButtonBase-root  > .MuiSvgIcon-root, 
+.row__setting__start > .setting__start__drag > .MuiSvgIcon-root
+{
+    opacity: 0.5;
+    font-size: 0.9em;
+}
+
+.row__content
+{
+    display: flex;
+    flex: 0.9;
+    font-size: 0.8em;
+    margin-left: 1em;
+    font-weight: 700;
+}
+
+.row__description
+{
+    font-weight: 400;
+    width: 400px;
+    color: gray;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.row__title, .row__time
+{
+    font-size: 0.8em;
+    font-weight: 700;
+}
+.EmailRow:hover > .row__setting__start > .setting__start__drag
+{
+    visibility: visible; 
+}
+.EmailRow:hover > .row__setting__start > .MuiButtonBase-root  > .MuiSvgIcon-root
+{
+    opacity: 1;
+}
+.row__setting__start
+{
+    display: flex;
+    align-items: center;
+}
+.EmailRow:hover 
+{
+    border-top: 3px solid whitesmoke;
+    box-shadow: 0px 4px 4px -2px rgba(0,0,0,0.24);
+}
+
+.EmailRow:hover > .row__settings__end
+{
+    display: flex;
+    width: 10em;
+    justify-content: space-between;
+}
+.EmailRow:hover > .row__time, .row__settings__end
+{
+    display: none;
+}
+.row__settings__end > .MuiButtonBase-root > .MuiSvgIcon-root
+{
+    font-size: 0.9em;
+}
+.row__settings__checkbox
+{
+    margin-left: 0 !important;
+    /* padding-left: 0 !important; */
+}
