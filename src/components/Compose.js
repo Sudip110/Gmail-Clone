@@ -15,7 +15,7 @@ function Compose() {
   const dispatch = useDispatch();
   const onSubmit = async (data) => {
     //console.log(data);
-    const docRef = await addDoc(collection(db, "users"), {
+    const docRef = await addDoc(collection(db, "emails"), {
       To: data.to,
       Subject: data.subject,
       CC: data.cc,
@@ -48,9 +48,7 @@ function Compose() {
             <OpenInFullOutlinedIcon />
           </IconButton>
           <IconButton onClick={handleClickCompose}>
-            <CloseOutlinedIcon
-              className="row1__settings__close"
-            />
+            <CloseOutlinedIcon className="row1__settings__close" />
           </IconButton>
         </div>
       </div>
@@ -103,7 +101,6 @@ function Compose() {
             color="primary"
             variant="contained"
             className="sendMail__options__send"
-            onClick={handleClickCompose}
           >
             Send
           </Button>

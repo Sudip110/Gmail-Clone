@@ -3,6 +3,7 @@
     flex: 0.9;
     margin-left: 3em;
     margin-right: 1em;
+    z-index: 1;
 }
 .emailList__settings
 {
