@@ -24,7 +24,7 @@ function Sidebar() {
     <div className="sidebar">
       <Button
         startIcon={<AddIcon fontSize="medium" />}
-        onClick={() => handleClick()}
+        onClick={handleClick}
         className="sidebar__compose"
       >
         Compose
