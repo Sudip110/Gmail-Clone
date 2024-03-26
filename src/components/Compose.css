@@ -1,0 +1,70 @@
+.Mail__compose
+{
+    display: inline-block;
+    overflow: hidden;
+    z-index: 3;
+
+
+}
+.Compose__row1
+{
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: gray;
+    color:whitesmoke
+}
+
+.Compose__row1__settings > .MuiButtonBase-root > .MuiSvgIcon-root
+{
+    color: whitesmoke;
+}
+.Compose__row1__settings > .MuiButtonBase-root
+{
+    border-radius: 2px !important;
+    color: whitesmoke;
+}
+
+.Mail__Compose > form 
+{
+    display: flex;
+    min-height: 80%;
+    flex-direction: column;
+    width: 100%;
+    /* align-items: center; */
+}
+
+.Mail__Compose > form >input
+{
+    border: none;
+    background-color: transparent;
+    margin-left: 1em;
+    margin-right: 1em;
+    outline: none;
+    border-bottom: 2px solid whitesmoke;
+    height: 3em;
+}
+#sendMessage__message
+{
+    /* flex: 0.7; */
+    min-height: 15em;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.sendMail__options
+{
+    margin: 1em;
+    margin-top: 2em;
+}
+
+.sendMail__options > .MuiButtonBase-root
+{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}

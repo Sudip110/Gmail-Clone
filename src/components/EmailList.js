@@ -50,11 +50,11 @@ function EmailList() {
         <ListSection Icon={PeopleAltOutlinedIcon} title={"Social"} selected={false}/>
       </div>
       <div className="EmailRow__section">
-        <EmailRow title={"LinkedIn Alerts"} content={"ahvahjvdshvjbvdjabdvjdvadnvadv"} description={"ssabwhjvevfahbdfajndv,mandvndvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"} time={"15:35 pm"}/>
+        <EmailRow title={"LinkedIn Alerts"} content={"ahvahjvdshvjbvdjabdvjdvadnvadv"} description={"ssabwhjvevfahbdfajndv,mandvndvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"} time={"15 Mar"}/>
       </div>
 
       <div className="EmailRow__section">
-        <EmailRow title={"LinkedIn Alerts"} content={"ahvahjvdshvjbvdjabdvjdvadnvadv"} description={"ssabwhjvevfahbdfajndv,mandvndvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"} time={"15:35 pm"}/>
+        <EmailRow title={"LinkedIn Alerts"} content={"ahvahjvdshvjbvdjabdvjdvadnvadv"} description={"ssabwhjvevfahbdfajndv,mandvndvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"} time={"15 Mar"}/>
       </div>
     </div>
   );

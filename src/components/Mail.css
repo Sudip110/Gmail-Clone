@@ -1,0 +1,99 @@
+.Mail
+{
+    flex: 0.9;
+    margin-top: 1em;
+    margin-left: 3em;
+    margin-right: 1em;
+    color: gray;
+}
+
+.Mail__Row1, .Mail__Row1__settings__left,.Mail__Row1__settings__right,
+.Row1__settings__left__Group1,.Row1__settings__left__Group2,.Mail__Row2,
+.Row2__left,.Row2__inbox__option
+{ 
+    display: flex;
+    align-items: center;
+}
+
+.Mail__Row1__settings__right,
+.Row1__settings__left__Group1,
+.Row1__settings__left__Group2
+{
+    height: 1.25em;
+}
+
+.Row1__settings__left__Group1,.Row1__settings__left__Group2
+{
+    margin-right: 0.5em;
+    border-right: 2px solid whitesmoke;
+}
+
+.MuiSvgIcon-root,.Mail__Row1__settings__right
+{
+    font-size: 0.8em !important;
+}
+
+.Mail__Row1
+{    
+    padding: 0.5em;
+    justify-content: space-between;
+}
+
+.Row1__settings__left__Group1
+{
+    margin-left: 1em;
+}
+
+.Mail__Row2
+{
+    justify-content: space-between;
+    margin-top: 1em;
+    margin-left: 4.5em;
+}
+
+.Row2__left > h3
+{
+    color: black;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+.Row2__inbox__option
+{
+    justify-content: flex-start;
+    font-size: 0.8em;
+    border-radius: 2px;
+    margin-left: 1em;
+    background-color: whitesmoke;
+}
+
+.Row2__inbox__option > p
+{
+    padding-right: 0.5em;
+    padding-left: 0.25em;
+    cursor: pointer;
+    border-top-left-radius:2px ;
+    border-bottom-left-radius:2px ;
+}
+.Row2__inbox__option > p:hover,
+.Row2__inbox__option > span:hover
+{
+    background-color: gray;
+    color: aliceblue ;
+}
+.Row2__inbox__option > span
+{
+    padding-right: 0.25em;
+    padding-left: 0.15em;
+    cursor: pointer;
+    border-top-right-radius:2px ;
+    border-bottom-right-radius:2px ;
+}
+.Row2__inbox__option > span:hover > .MuiSvgIcon-root
+{
+  margin-top: 0.3em;
+  color: aliceblue !important;
+}
+.Row2__settings__right
+{
+    margin-right: 1em;
+}

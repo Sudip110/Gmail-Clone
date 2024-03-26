@@ -39,7 +39,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+.row__time
+{
+    margin-right: 3em;
+}
 .row__title, .row__time
 {
     font-size: 0.8em;

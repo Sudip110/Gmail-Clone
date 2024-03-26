@@ -30,7 +30,7 @@
 
 .settings__left__option, .MuiSvgIcon-root, .settings__right__range, .emailList__settings__right > p
 {
-    color: grey !important;
+    color: grey;
 }
 
 .settings__dropdown
