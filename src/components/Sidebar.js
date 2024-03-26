@@ -15,10 +15,8 @@ import { selectSendMessageIsOpen } from "../features/mailSlice.js";
 function Sidebar() {
   const dispatch = useDispatch();
   const SendMessageIsOpen = useSelector(selectSendMessageIsOpen);
-  const handleClick = (event) => {
+  const handleClick = () => {
     console.log("Compose clicked!!");
-    event.preventDefault();
-    event.stopPropagation();
     dispatch(openSendMessage());
     console.log(openSendMessage);
   };
@@ -26,7 +24,7 @@ function Sidebar() {
     <div className="sidebar">
       <Button
         startIcon={<AddIcon fontSize="medium" />}
-        onClick={(event) => handleClick(event)}
+        onClick={() => handleClick()}
         className="sidebar__compose"
       >
         Compose

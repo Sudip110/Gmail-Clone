@@ -47,9 +47,8 @@ function Compose() {
           <IconButton>
             <OpenInFullOutlinedIcon />
           </IconButton>
-          <IconButton onClick={handleClickCompose()}>
+          <IconButton onClick={handleClickCompose}>
             <CloseOutlinedIcon
-              // onClick={dispatch(closeSendMessage())}
               className="row1__settings__close"
             />
           </IconButton>
@@ -104,6 +103,7 @@ function Compose() {
             color="primary"
             variant="contained"
             className="sendMail__options__send"
+            onClick={handleClickCompose}
           >
             Send
           </Button>
