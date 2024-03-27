@@ -1,0 +1,5 @@
+Bugs:
+26 March 2024
+1) Have to refresh the page to see the new mail after clicking on send
+2) sort all mails in descending order of timestamp (closed on 27th March 2024)
+3) email rows coming on top of send mail window

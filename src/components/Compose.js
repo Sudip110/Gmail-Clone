@@ -7,7 +7,12 @@ import MinimizeOutlinedIcon from "@mui/icons-material/MinimizeOutlined";
 import { Button, IconButton } from "@mui/material";
 import { closeSendMessage } from "../features/mailSlice.js";
 import { useDispatch } from "react-redux";
-import { collection, addDoc, getDocs, Timestamp } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  serverTimestamp,
+} from "firebase/firestore";
 // import selectSendMessageIsOpen from "../features/mailSlice.js";
 import { db, app } from "../Firebase/firebase.js";
 function Compose() {
@@ -15,25 +20,24 @@ function Compose() {
   const dispatch = useDispatch();
   const onSubmit = async (data) => {
     //console.log(data);
-    const docRef = await addDoc(collection(db, "emails"), {
-      To: data.to,
-      Subject: data.subject,
-      CC: data.cc,
-      Bcc: data.bcc,
-      Message: data.message,
-      timeStamp: Timestamp.fromDate(new Date()),
-    });
-    console.log("Document written with ID: ", docRef.id);
-
-    const querySnapshot = await getDocs(collection(db, "emails"));
-    querySnapshot.forEach((email) => {
-      console.log(`${email.id} => ${email.data()}`);
-    });
-
-    dispatch(closeSendMessage());
+    try {
+      await addDoc(collection(db, "emails"), {
+        To: data.to,
+        Subject: data.subject,
+        CC: data.cc,
+        Bcc: data.bcc,
+        Message: data.message,
+        timeStamp: serverTimestamp(),
+      });
+      // console.log("Document written with ID: ", docRef.id);
+      dispatch(closeSendMessage());
+    } 
+    catch (error) 
+    {
+      console.error("Error adding document: ", error);
+    }
   };
   const handleClickCompose = () => {
-    console.log("object77777777777777777777");
     dispatch(closeSendMessage());
   };
   return (

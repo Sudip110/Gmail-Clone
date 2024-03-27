@@ -25,9 +25,11 @@ function EmailList() {
   const [emails, setEmails] = useState([]);
   const fetchEmails = async () => {
     try {
-      const querySnapshot = await getDocs(
-        query(collection(db, "emails"), orderBy("timestamp","desc"))
-      );
+      // const querySnapshot = await getDocs(
+      //   query(collection(db, "emails"), orderBy("timestamp","desc"))
+      // );
+      const q = query(collection(db, "emails"), orderBy("timeStamp", "desc"));
+      const querySnapshot = await getDocs(q);
       const fetchedEmails = [];
       querySnapshot.forEach((doc) => {
         fetchedEmails.push({
