@@ -33,7 +33,7 @@ function EmailList() {
   if(emails.length>0)
   {
     emailsFetched=true;
-    console.log(emails[0].To);
+    console.log(emails[0].timeStamp.seconds);
   }
   const fetchEmails =() => {
       try {
@@ -106,6 +106,7 @@ function EmailList() {
             Bcc,
             Cc,
             Message,
+            timeStamp:{seconds}
             // timeStamp: { seconds },
         }) => (
           <div className="EmailRow__section">
@@ -114,7 +115,7 @@ function EmailList() {
               title={Subject}
               content={Message.slice(0, 6)}
               description={Message.slice(6)}
-              // time={new Date(seconds * 1000).toLocaleString()}
+              time={new Date(seconds * 1000).toLocaleString()}
             />
           </div>
         )
