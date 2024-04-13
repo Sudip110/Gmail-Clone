@@ -21,33 +21,38 @@ import {
 import { db } from "../Firebase/firebase";
 import ListSection from "./ListSection";
 import EmailRow from "./EmailRow";
+
+
 function EmailList() {
   const [emails, setEmails] = useState([]);
-  const fetchEmails = async () => {
-    try {
-      // const querySnapshot = await getDocs(
-      //   query(collection(db, "emails"), orderBy("timestamp","desc"))
-      // );
-      const q = query(collection(db, "emails"), orderBy("timeStamp", "desc"));
-      const querySnapshot = await getDocs(q);
-      const fetchedEmails = [];
-      querySnapshot.forEach((doc) => {
-        fetchedEmails.push({
-          id: doc.id,
-          data: doc.data(),
-        });
-      });
-      console.log(fetchedEmails);
-      setEmails(fetchedEmails);
-      // console.log(emails);
-    } catch (error) {
-      console.error("Error fetching emails:", error);
-    }
+  let emailsFetched=false;
+
+  console.log(emails.length);
+  console.log(emails);
+
+  if(emails.length>0)
+  {
+    emailsFetched=true;
+    console.log(emails[0].To);
+  }
+  const fetchEmails =() => {
+      try {
+        const q = query(collection(db, "emails"), orderBy("timeStamp", "desc"));
+        return  onSnapshot(q,(querySnapshot)=>
+                          {
+                            setEmails((querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))))
+                          })  
+          } 
+          catch (error) {console.error("Error fetching emails:", error);
+          }
   };
-  useEffect(() => {
-    fetchEmails();
-    console.log(`emails ${emails}`);
-  }, []);
+
+  useEffect(
+    () =>{
+      fetchEmails()
+      },
+    []);
+
   return (
     <div className="emailList">
       <div className="emailList__settings">
@@ -93,17 +98,15 @@ function EmailList() {
         />
       </div>
 
-      {emails.map(
+      {emailsFetched && emails.map(
         ({
-          id,
-          data: {
+            id,
             To,
             Subject,
             Bcc,
             Cc,
             Message,
-            timeStamp: { seconds },
-          },
+            // timeStamp: { seconds },
         }) => (
           <div className="EmailRow__section">
             <EmailRow
@@ -111,21 +114,12 @@ function EmailList() {
               title={Subject}
               content={Message.slice(0, 6)}
               description={Message.slice(6)}
-              time={new Date(seconds * 1000).toLocaleString()}
+              // time={new Date(seconds * 1000).toLocaleString()}
             />
           </div>
         )
       )}
-      {/* <div className="EmailRow__section">
-        <EmailRow
-          title={"LinkedIn Alerts"}
-          content={"ahvahjvdshvjbvdjabdvjdvadnvadv"}
-          description={
-            "ssabwhjvevfahbdfajndv,mandvndvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
-          }
-          time={"15 Mar"}
-        />
-      </div> */}
+
     </div>
   );
 }
