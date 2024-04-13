@@ -109,13 +109,18 @@ function EmailList() {
             timeStamp:{seconds}
             // timeStamp: { seconds },
         }) => (
+
           <div className="EmailRow__section">
             <EmailRow
               key={id}
               title={Subject}
               content={Message.slice(0, 6)}
               description={Message.slice(6)}
-              time={new Date(seconds * 1000).toLocaleString()}
+              time={new Date(seconds * 1000).toLocaleString('en-us',
+              {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',})}
             />
           </div>
         )
