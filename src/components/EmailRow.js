@@ -8,10 +8,21 @@ import DraftsOutlinedIcon from "@mui/icons-material/DraftsOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import "./EmailRow.css";
 import { IconButton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { selectMail } from "../features/mailSlice";
 
-function EmailRow({ title, content, description, time }) {
+function EmailRow({id, title, content, description, time }) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  
+  const openMail =()=>
+  {
+    dispatch(selectMail({id, title, content, description, time}));
+    navigate("/mail");
+  }
   return (
-    <div className="EmailRow">
+    <div onClick={openMail} className="EmailRow">
       <div className="row__setting__start">
         <div className="setting__start__drag">
         <DragIndicatorOutlinedIcon />

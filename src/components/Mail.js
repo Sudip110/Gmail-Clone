@@ -17,13 +17,18 @@ import NavigateNextSharpIcon from "@mui/icons-material/NavigateNextSharp";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import PrintOutlinedIcon from "@mui/icons-material/PrintOutlined";
 import OpenInNewOutlinedIcon from "@mui/icons-material/OpenInNewOutlined";
+import { useSelector } from "react-redux";
+import { selectOpenMail } from "../features/mailSlice";
 function Mail() {
   const navigate = useNavigate();
+  const selectedMail=useSelector(selectOpenMail);
   const handleClick = ()=>
   {
     console.log("handleclick")
     navigate("/");
   }
+  if(selectedMail)
+    console.log(selectedMail);
   return (
     <div className="Mail">
       <div className="Mail__Row1">
@@ -80,7 +85,7 @@ function Mail() {
       </div>
       <div className="Mail__Row2">
         <div className="Row2__left">
-          <h3 className="Row2__Title">A Chinese city exists for iPhones</h3>
+          <h3 className="Row2__Title">{selectedMail?.title}</h3>
           <div className="Row2__inbox__option">
             <p>Inbox</p>
             <span>
@@ -97,6 +102,9 @@ function Mail() {
           </IconButton>
         </div>
       </div>
+      <div className="mail__content">
+        <p>{`${selectedMail?.content} ${selectedMail?.description}`}</p>
+        </div>
     </div>
   );
 }
