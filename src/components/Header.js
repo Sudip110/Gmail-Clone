@@ -9,7 +9,11 @@ import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import { IconButton } from "@mui/material";
 import Logo from "../assets/Gmail with Text.svg";
 import "./Header.css";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
 function Header() {
+  const user = useSelector(selectUser);
+  const photoURL =user.userPhotoUrl;
   return (
     <div className="header">
       <div className="header__left">
@@ -45,7 +49,7 @@ function Header() {
                 <SettingsIcon />
             </IconButton>
             <IconButton className="header__right_avatar">
-                <AccountCircleIcon />
+                {(photoURL ? (<img src={photoURL}></img>):(<AccountCircleIcon />))}
             </IconButton>
       </div>
     </div>
