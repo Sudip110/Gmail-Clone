@@ -9,29 +9,39 @@ import Compose from "./components/Compose";
 import { selectSendMessageIsOpen } from "./features/mailSlice.js";
 import { useSelector, Provider } from "react-redux";
 import { store } from "./app/store.js";
+import Login from "./components/Login.js";
+import { selectUser } from "./features/userSlice.js";
 function App() {
   const sendMailIsOpen = useSelector(selectSendMessageIsOpen);
+  const user =useSelector(selectUser);
   console.log(sendMailIsOpen);
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Header />
-        <div className="app__body">
-          <Router>
-            <Sidebar />
-            <Routes>
-              <Route path="/" element={<EmailList />} />
-              <Route path="/mail" element={<Mail />} />
-            </Routes>
-          </Router>
-          {sendMailIsOpen && (
-            <div className="sendMessage">
-              <Compose />
-            </div>
-          )}
+    <Router>
+      {!user?
+      (<Login/>)
+      :
+      (
+      <Provider store={store}>
+        <div className="App">
+          <Header />
+          <div className="app__body">
+            
+              <Sidebar />
+              <Routes>
+                <Route path="/" element={<EmailList />} />
+                <Route path="/mail" element={<Mail />} />
+              </Routes>
+            
+            {sendMailIsOpen && (
+              <div className="sendMessage">
+                <Compose />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </Provider>
+      </Provider>
+    )}
+    </Router>
   );
 }
 
