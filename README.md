@@ -25,12 +25,12 @@ This application is a clone of the popular email service, Gmail, built using Rea
 - Copy the Firebase configuration details (API key, auth domain, project ID, etc.) from the project settings.
 
 4. Create a `.env` file in the project root directory and add the Firebase configuration:
-REACT_APP_FIREBASE_API_KEY=your-api-key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your-auth-domain
-REACT_APP_FIREBASE_PROJECT_ID=your-project-id
-REACT_APP_FIREBASE_STORAGE_BUCKET=your-storage-bucket
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
-REACT_APP_FIREBASE_APP_ID=your-app-id
+- REACT_APP_FIREBASE_API_KEY=your-api-key
+- REACT_APP_FIREBASE_AUTH_DOMAIN=your-auth-domain
+- REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+- REACT_APP_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+- REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+- REACT_APP_FIREBASE_APP_ID=your-app-id
 
 
 5. Start the development server:
