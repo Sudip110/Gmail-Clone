@@ -1,0 +1,35 @@
+.ProfileContainer
+{
+    background-color: whitesmoke;
+    position: absolute;
+    top: 10%;
+    right: 1%;
+    z-index: 99999;
+    width: 25em;
+    height: 12em;
+    border-radius: 5px;
+    padding: 2rem;
+}
+.signout__dialogbox__content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ProfileContainer > .MuiButtonBase-root
+{
+   position: absolute;
+   right: 0.5%;
+   top: 0.5%;
+   border-radius: 5px;
+}
+.signout__dialogbox__content > img
+{
+    object-fit: contain;
+    border-radius: 50%;
+}
+.signout__dialogbox__element
+{
+    margin-bottom: 0.5rem;
+}

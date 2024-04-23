@@ -1,0 +1,20 @@
+.login__container
+{
+    /* position: absolute;
+    top: 25%;
+    left: 25%;
+    right: 25%; */
+    margin: auto;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: brown; */
+    height: 30em;
+    width: 30em;
+}
+img
+{
+    object-fit: contain;
+    height: 8rem;
+}
