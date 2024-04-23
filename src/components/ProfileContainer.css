@@ -6,9 +6,13 @@
     right: 1%;
     z-index: 99999;
     width: 25em;
-    height: 12em;
+    height: 15em;
     border-radius: 5px;
     padding: 2rem;
+}
+.signout__dialogbox__content > .MuiButtonBase-root
+{
+  margin-top: 1.5em;
 }
 .signout__dialogbox__content
 {

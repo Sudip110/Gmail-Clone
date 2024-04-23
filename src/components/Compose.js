@@ -6,16 +6,17 @@ import OpenInFullOutlinedIcon from "@mui/icons-material/OpenInFullOutlined";
 import MinimizeOutlinedIcon from "@mui/icons-material/MinimizeOutlined";
 import { Button, IconButton } from "@mui/material";
 import { closeSendMessage } from "../features/mailSlice.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   collection,
   addDoc,
-  getDocs,
   serverTimestamp,
 } from "firebase/firestore";
 // import selectSendMessageIsOpen from "../features/mailSlice.js";
 import { db, app } from "../Firebase/firebase.js";
+import { selectUser } from "../features/userSlice.js";
 function Compose() {
+  const user = useSelector(selectUser);
   const { register, handleSubmit, watch, control, errors } = useForm();
   const dispatch = useDispatch();
   const onSubmit = async (data) => {
@@ -28,6 +29,7 @@ function Compose() {
         Bcc: data.bcc,
         Message: data.message,
         timeStamp: serverTimestamp(),
+        sender:user,
       });
       // console.log("Document written with ID: ", docRef.id);
       dispatch(closeSendMessage());

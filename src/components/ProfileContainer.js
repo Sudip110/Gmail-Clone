@@ -30,7 +30,7 @@ function ProfileContainer({email,photoURL,name}) {
                       <span className="signout__dialogbox__element"><p>{email}</p></span>
                       <img src ={photoURL} className="signout__dialogbox__element"></img>
                       <p className="signout__dialogbox__element">Hi <span>{` ${name} !`}</span></p>
-                      <Button onClick={handleClickSignout} className="signout__dialogbox__element" color="primary"
+                      <Button onClick={handleClickSignout} className="signout__button" color="primary"
                       variant="contained" >Sign out </Button>
                     </div>
     </div>
