@@ -1,46 +1,71 @@
-# Getting Started with Create React App and Redux
+# Gmail Clone Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This application is a clone of the popular email service, Gmail, built using React, Redux, and Firebase. The application allows users to sign in using their Google account, compose new emails, view their inbox, and manage their emails.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Sign in with Google account
+- Compose new emails
+- View inbox
+- Archive, delete, and mark emails as unread (still in progress. Will update in the future.)
+- View individual email details
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
+- git clone https://github.com/your-repo/gmail-clone.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Install dependencies:
+- cd gmail-clone
+- npm install
 
-### `npm test`
+3. Set up Firebase:
+- Create a new Firebase project in the Firebase console.
+- Enable Authentication and Cloud Firestore in the project.
+- Copy the Firebase configuration details (API key, auth domain, project ID, etc.) from the project settings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Create a `.env` file in the project root directory and add the Firebase configuration:
+REACT_APP_FIREBASE_API_KEY=your-api-key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your-auth-domain
+REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+REACT_APP_FIREBASE_APP_ID=your-app-id
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Start the development server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Open the application in your web browser at `http://localhost:3000`.
+2. Click the "Sign in" button and authenticate with your Google account.
+3. Once signed in, you will be redirected to the inbox view.
+4. To compose a new email, click the "Compose" button in the sidebar.
+5. Enter the recipient's email address, subject, and message body, and click "Send".
+6. To view an email, click on it in the inbox list.
+7. Use the various icons and buttons in the email view to archive, delete, mark as unread, or perform other actions on the email.
+8. To sign out, click on your profile icon in the top-right corner and select "Sign out".
 
-### `npm run eject`
+## Code Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `src/components`: Contains React components used throughout the application.
+- `Compose.js`: Component for composing a new email.
+- `EmailList.js`: Component for displaying the list of emails in the inbox.
+- `EmailRow.js`: Component for rendering a single email row in the list.
+- `Header.js`: Component for the application header.
+- `ListSection.js`: Component for rendering sections in the email list.
+- `Mail.js`: Component for displaying the details of a selected email.
+- `ProfileContainer.js`: Component for the user profile dropdown.
+- `Sidebar.js`: Component for the sidebar navigation.
+- `Sidebaroption.js`: Component for rendering a single sidebar option.
+- `src/features`: Contains Redux slices for managing application state.
+- `mailSlice.js`: Slice for managing email-related state.
+- `userSlice.js`: Slice for managing user authentication state.
+- `src/Firebase`: Contains Firebase configuration and initialization code.
+- `src/assets`: Contains static assets like images and icons.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
